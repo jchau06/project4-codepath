@@ -1,4 +1,4 @@
-/* Make sure the base elements can stretch full height */
+
 html, body {
   height: 100%;
   margin: 0;
@@ -8,16 +8,16 @@ html, body {
   height: 100%;
 }
 
-/* Make the wrapper take the full screen */
+
 .background-wrapper {
   position: relative;
-  height: 100vh;      /* full screen height */
-  width: 100vw;       /* full screen width */
+  height: 100vh;    
+  width: 100vw;      
   overflow: hidden;
   z-index: 0;
 }
 
-/* Apply background image as a layer */
+
 .background-wrapper::before {
   content: "";
   position: absolute;
@@ -25,11 +25,31 @@ html, body {
   background: url("/dog-background.jpg") no-repeat center center/cover;
   opacity: 0.3;
   z-index: -1;
-  pointer-events: none; /* ✅ blocks it from capturing clicks */
+  pointer-events: none; 
 }
 
-/* Content centered and on top of background */
+.app-wrapper {
+  display: flex;
+  height: 100vh;
+  padding: 1rem;
+  gap: 2rem;
+  background: transparent;
+}
+
+.app-wrapper > * {
+  flex-shrink: 0;
+}
+
+.ban-list {
+  flex: 3;
+  border-left: 2px solid #ddd;
+  padding-left: 1rem;
+}
+
+
 .content {
+  flex: 7;
+  overflow-y: auto;
   position: relative;
   z-index: 1;
   max-width: 60vw;
@@ -37,13 +57,13 @@ html, body {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.5); /* adjust opacity here */
-  color: white; /* Ensure text is readable */
+  background-color: rgba(0, 0, 0, 0.5); 
+  color: white;
 }
 
 .content-overlay {
-  background-color: rgba(0, 0, 0, 0.5); /* adjust opacity here */
+  background-color: rgba(0, 0, 0, 0.5); 
   padding: 2rem;
   border-radius: 8px;
-  color: white; /* Ensure text is readable */
+  color: white;
 }

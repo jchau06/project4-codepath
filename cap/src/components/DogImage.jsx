@@ -1,4 +1,4 @@
-import "./DogImage.css"; // for styles, we'll add that below
+import "./DogImage.css"; 
 
 export default function DogImage({ imageUrl }) {
   if (!imageUrl) return null;
