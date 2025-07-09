@@ -1,0 +1,40 @@
+.button-discover {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.button-discover:hover {
+  background-color: black;
+  color: white;
+
+}
+
+.info-buttons-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.info-button {
+  background-color: #f0f0f0;
+  border: 1.5px solid #333;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: default; /* since these are informational, not clickable */
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.info-button:hover {
+  background-color: #333;
+  color: white;
+}

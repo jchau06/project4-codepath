@@ -1,0 +1,49 @@
+/* Make sure the base elements can stretch full height */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  height: 100%;
+}
+
+/* Make the wrapper take the full screen */
+.background-wrapper {
+  position: relative;
+  height: 100vh;      /* full screen height */
+  width: 100vw;       /* full screen width */
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Apply background image as a layer */
+.background-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  background: url("/dog-background.jpg") no-repeat center center/cover;
+  opacity: 0.3;
+  z-index: -1;
+  pointer-events: none; /* ✅ blocks it from capturing clicks */
+}
+
+/* Content centered and on top of background */
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 60vw;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5); /* adjust opacity here */
+  color: white; /* Ensure text is readable */
+}
+
+.content-overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* adjust opacity here */
+  padding: 2rem;
+  border-radius: 8px;
+  color: white; /* Ensure text is readable */
+}
